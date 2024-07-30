@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+<body>
+    <div class="firstString">
+        <form id="dealForm1" class="form">
+            <h1>Clients details</h1>
+            <input type="text" id="firstName" placeholder="First Name" name="Firstname" required>
+            <input type="text" id="secondName" placeholder="Last Name" name="Secondname" required><br>
+            <input type="tel" id="phone" placeholder="Your phone" name="phone" required maxlength="14"><br>
+            <script>
+                document.getElementById('phone').addEventListener('input', function (e) {
+                    let input = e.target.value.replace(/\D/g, '');
+                    let formatted = '';
+
+                    if (input.length > 0) {
+                        formatted += '(' + input.substring(0, 3);
+                    }
+                    if (input.length >= 4) {
+                        formatted += ') ' + input.substring(3, 6);
+                    }
+                    if (input.length >= 7) {
+                        formatted += '-' + input.substring(6, 10);
+                    }
+
+                    e.target.value = formatted;
+                });
+            </script>
+            <input type="email" id="email" placeholder="Your email" name="email" required>
+        </form>
+
+        <form id="dealForm2" class="form">
+            <h1>Job type</h1>
+            <select name="jobType" id="jobType" required>
+                <option value="programmer">Programmer</option>
+                <option value="designer">Designer</option>
+                <option value="analyst">Analyst</option>
+                <option value="" disabled selected>Job Type</option>
+            </select>
+            <select name="jobSource" id="jobSource" required>
+                <option value="one">One</option>
+                <option value="two">Two</option>
+                <option value="three">Three</option>
+                <option value="" disabled selected>Job Source</option>
+            </select><br>
+            <textarea id="jobDescription" placeholder="Job description (optional)" name="jobDescription"></textarea>
+        </form>
+    </div>
+    <div class="secondString">
+        <form id="dealForm3" class="form">
+            <h1>Service location</h1>
+            <input type="text" id="Address" placeholder="Address" name="Address" required><br>
+            <input type="text" id="City" placeholder="City" name="City" required><br>
+            <input type="text" id="State" placeholder="State" name="State" required><br>
+            <input type="number" id="zip" placeholder="Zip code" name="Zip" required>
+            <select name="Area" id="Area">
+                <option value="Tampa">Tampa</option>
+                <option value="noTampa">No Tampa</option>
+                <option value="" disabled selected>Area</option>
+            </select>
+        </form>
+        <form id="dealForm4" class="form">
+            <h1>Scheduled</h1>
+            <input type="date" id="stDate" placeholder="Start Date" name="Date" required><br>
+            <input type="text" id="stTi" name="stTi" placeholder="Start time" onfocus="this.type='time'" required>
+            <input type="text" id="endTi" name="endTi" placeholder="End time" onfocus="this.type='time'" required><br>
+            <select name="test" id="test">
+                <option value="first">First test</option>
+                <option value="second">Second test</option>
+                <option value="third">Third test</option>
+                <option value="" disabled selected>Test select</option>
+            </select>
+        </form>
+    </div>
+    <button type="submit" id="submitAllForms">Create job</button>
+    <script>
+        document.getElementById('submitAllForms').addEventListener('click', function() {
+            const data = {
+                dealForm1: {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('secondName').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value
+                },
+                dealForm2: {
+                    jobType: document.getElementById('jobType').value,
+                    jobSource: document.getElementById('jobSource').value,
+                    jobDescription: document.getElementById('jobDescription').value
+                },
+                dealForm3: {
+                    Address: document.getElementById('Address').value,
+                    City: document.getElementById('City').value,
+                    State: document.getElementById('State').value,
+                    zipCode: document.getElementById('zip').value,
+                    Area: document.getElementById('Area').value
+                },
+                dealForm4: {
+                    startDate: document.getElementById('stDate').value,
+                    startTime: document.getElementById('stTi').value,
+                    endTime: document.getElementById('endTi').value,
+                    test: document.getElementById('test').value
+                }
+            };
+            window.parent.postMessage(data, '*');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 1080px;
+    text-align: center;
+}
+
+.form{
+    margin-left: 50px;
+    padding: 15px;
+    padding-bottom: 75px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000000;
+
+}
+
+select{
+    margin: 3px;
+}
+
+#jobType{
+    padding: 4px;
+    width: 160px;
+}
+
+#jobSource{
+    padding: 4px;
+    width: 160px;
+}
+
+#jobDescription{
+    margin: 3px;
+    width: 330px;
+    display:inline-block;
+    height: 120px;
+}
+
+input{
+    margin: 3px;
+}
+input[type="tel"]{
+    width: 330px;
+}
+input[type="email"]{
+    width: 330px;
+}
+
+.firstString{
+    margin: 5px;
+    display: flex;
+}
+
+.secondString{
+    margin: 5px;
+    display: flex;
+}
+
+#dealForm3 input[type="text"]{
+    width: 330px;
+}
+
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#Area{
+    padding: 2px;
+    width: 160px;
+}
+
+#stDate{
+    padding: 2px;
+    width: 330px;
+}
+
+#endTi{
+    width: 160px;
+}
+
+#stTi{
+    width: 160px;
+}
+
+#test{
+    width: 330px;
+}
+
+#submitAllForms{
+    background-color: yellow;
+    padding: 25px;
+    border-radius: 7px;
+}
