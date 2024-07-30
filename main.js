@@ -11,7 +11,7 @@ window.addEventListener('message', function(event) {
 });
 
 function createPipedriveDeal(data) {
-    const url = `https://${companydomain}.api.pipedrive.com/v1/deals?api_token=${apiToken}`;
+    const url = `https://${companydomain}.pipedrive.com/api/v1/deals?api_token=${apiToken}`;
 
     const dealData = {
         title: `${data.dealForm1.firstName} ${data.dealForm1.lastName}`,
