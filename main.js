@@ -1,4 +1,5 @@
 const apiToken = 'ececda0ced4f48328c5110d5ecf2129b1e76545b';
+const companydomain = 'redex';
 
 window.addEventListener('message', function(event) {
     if (event.origin !== window.location.origin) {
@@ -10,7 +11,7 @@ window.addEventListener('message', function(event) {
 });
 
 function createPipedriveDeal(data) {
-    const url = `https://api.pipedrive.com/v1/deals?api_token=${apiToken}`;
+    const url = `https://${companydomain}.api.pipedrive.com/v1/deals?api_token=${apiToken}`;
 
     const dealData = {
         title: `${data.dealForm1.firstName} ${data.dealForm1.lastName}`,
