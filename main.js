@@ -1,4 +1,4 @@
-const apiToken = 'd4e8370f967167c4024f938785a4d3d1abaade5b';
+const apiToken = 'ececda0ced4f48328c5110d5ecf2129b1e76545b';
 
 window.addEventListener('message', function(event) {
     if (event.origin !== window.location.origin) {
